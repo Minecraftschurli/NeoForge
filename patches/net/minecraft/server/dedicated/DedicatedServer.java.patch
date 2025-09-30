@@ -8,6 +8,14 @@
  
      public DedicatedServer(
          Thread serverThread,
+@@ -175,6 +_,7 @@
+                 throw new IllegalStateException("Invalid management server secret, must be 40 alphanumeric characters");
+             }
+ 
++            net.neoforged.neoforge.server.ServerLifecycleHooks.fireSchemaRegistryEvent();
+             String s1 = this.getProperties().managementServerHost;
+             HostAndPort hostandport = HostAndPort.fromParts(s1, i);
+             SecurityConfig securityconfig = new SecurityConfig(s);
 @@ -199,6 +_,7 @@
  
              @Override
