@@ -13,9 +13,9 @@
              }
  
 +            net.neoforged.neoforge.server.ServerLifecycleHooks.fireSchemaRegistryEvent();
-             String s1 = this.getProperties().managementServerHost;
-             HostAndPort hostandport = HostAndPort.fromParts(s1, i);
-             SecurityConfig securityconfig = new SecurityConfig(s);
+             String managementHost = this.getProperties().managementServerHost;
+             HostAndPort hostAndPort = HostAndPort.fromParts(managementHost, managementPort);
+             SecurityConfig securityConfig = new SecurityConfig(managementServerSecret);
 @@ -199,6 +_,7 @@
  
              @Override
